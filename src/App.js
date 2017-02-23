@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router'
+import Stores from './Stores'
+import StoreDetail from './StoreDetail'
+import StoreForm from './StoreForm'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+// const Links = () =>
+//     <nav>
+//       <Link to="/">Home</Link>
+//       <Link to="about">About</Link>
+//       <Link to="contact">Contact</Link>
+//     </nav>
+
+
+const App = () => {
+  return (
+    <Router history={ hashHistory }>
+      <Route path="/" component={Stores}>
+        <Route path="/StoreDetail" component={}></Route>
+        <Route path="/StoreForm" component={}></Route>
+      </Route>
+    </Router>
+  )
 }
 
-export default App;
+
+export default App
